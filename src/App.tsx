@@ -3,6 +3,7 @@ import './App.scss';
 import { SuperheroMainCard } from './Components/SuperheroCard';
 import { InfoCard } from './Components/InfoCard/InfoCard';
 import { Superhero } from './types/superhero';
+import { CreateSuperhero } from './Components/CreateSuperhero';
 
 const superheroes = [
   {
@@ -73,10 +74,11 @@ const infoCard: Superhero = {
 function App() {
   return (
     <div className="App">
-      {/* {superheroes.map((superhero) => (
+      {superheroes.map((superhero) => (
         <SuperheroMainCard key={superhero.id} superhero={superhero} />
-      ))} */}
-      <InfoCard infoCard={infoCard} />
+      ))}
+      {/* <InfoCard infoCard={infoCard} /> */}
+      <CreateSuperhero />
     </div>
   );
 }

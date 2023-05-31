@@ -9,7 +9,12 @@
 }
 
 .App {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 15px;
   min-height: 100vh;
   background-color: burlywood;
   font-family: 'Poppins', sans-serif;
+  padding: 100px;
 }
