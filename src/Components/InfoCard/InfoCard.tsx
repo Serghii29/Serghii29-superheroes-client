@@ -1,4 +1,5 @@
 import React from 'react';
+import { deleteSuperhero } from '../../api/superhero';
 import { Superhero } from '../../types/superhero';
 import './InfoCard.scss';
 
@@ -8,6 +9,7 @@ type Props = {
 
 export const InfoCard: React.FC<Props> = ({ infoCard }) => {
   const {
+    id,
     nickname,
     real_name,
     origin_description,
@@ -16,9 +18,17 @@ export const InfoCard: React.FC<Props> = ({ infoCard }) => {
     images,
   } = infoCard;
 
+  const removeSuperhero = async () => {
+    try {
+      await deleteSuperhero('' + id);
+    } catch (error) {
+      console.log('tut');
+    }
+  };
+
   return (
     <div className="superhero-info">
-      <div className="superhero-info__close-button"></div>
+      {/* <div className="superhero-info__close-button"></div> */}
       <img className="superhero-info__photo" src={images} alt={nickname} />
       <h2 className="superhero-info__nickname">{nickname}</h2>
       <p className="superhero-info__real-name">Real Name: {real_name}</p>
@@ -32,7 +42,12 @@ export const InfoCard: React.FC<Props> = ({ infoCard }) => {
 
       <div className="superhero-info__buttons">
         <button className="superhero-info__edit-button">Edit</button>
-        <button className="superhero-info__delete-button">Delete</button>
+        <button 
+          className="superhero-info__delete-button"
+          onClick={removeSuperhero}
+        >
+          Delete
+        </button>
       </div>
     </div>
   );

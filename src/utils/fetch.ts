@@ -1,4 +1,4 @@
-const BASE_URL = 'https://back-end-part.onrender.com';
+const BASE_URL = 'http://localhost:3333';
 
 function wait(delay: number) {
   return new Promise((resolve) => {
