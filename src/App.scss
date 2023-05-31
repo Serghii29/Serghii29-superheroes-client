@@ -1,0 +1,15 @@
+@import './/utilsScss/reset.scss';
+@import './utilsScss/mixins.scss';
+@import './utilsScss/grid.scss';
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+.App {
+  min-height: 100vh;
+  background-color: burlywood;
+  font-family: 'Poppins', sans-serif;
+}
